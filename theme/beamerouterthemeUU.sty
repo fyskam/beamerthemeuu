@@ -1,0 +1,76 @@
+\mode<presentation>
+
+% Section in header
+\defbeamertemplate*{headline}{UU}[1][]{%
+%  \leavevmode%
+%  \@tempdimb=2.4375ex%
+%  \ifnum\beamer@subsectionmax<\beamer@sectionmax%
+%    \multiply\@tempdimb by\beamer@sectionmax%
+%  \else%
+%    \multiply\@tempdimb by\beamer@subsectionmax%
+%  \fi%
+%  \ifdim\@tempdimb>0pt%
+%    \advance\@tempdimb by 1.825ex%
+%    \begin{beamercolorbox}[wd=.5\paperwidth,ht=\@tempdimb]{section in head/foot}%
+%      \vbox to\@tempdimb{\vfil\insertsectionnavigation{.5\paperwidth}\vfil}%
+%    \end{beamercolorbox}%
+%    \begin{beamercolorbox}[wd=.5\paperwidth,ht=\@tempdimb]{subsection in head/foot}%
+%      \vbox to\@tempdimb{\vfil\insertsubsectionnavigation{.5\paperwidth}\vfil}%
+%    \end{beamercolorbox}%
+%  \fi%
+\@tempdima=\textwidth%
+%\newcommand{\titleadjust}{\hskip0.12\paperwidth}%
+\advance\@tempdima by\beamer@leftmargin%
+\advance\@tempdima by\beamer@rightmargin%
+\begin{beamercolorbox}[sep=0.012\paperwidth,left,wd=\the\@tempdima]{frametitle}
+    {\usebeamerfont{section in head/foot}%
+    \usebeamercolor[fg]{section in head/foot}%
+    \sectionadjust\strut\insertsection\strut\par}%
+    {%
+        \ifx\insertsection\@empty%
+        \else%
+        {\usebeamerfont{subsection in head/foot}%
+        \usebeamercolor[fg]{subsection in head/foot}%
+        \sectionadjust\insertsubsection\strut\par}%
+        \fi
+    }%
+\end{beamercolorbox}
+}
+
+% Frame title
+\defbeamertemplate*{frametitle}{UU}[1][]{
+    \@tempdima=\textwidth%
+    \newcommand{\titleadjust}{\hskip0.07\paperwidth}%
+    \advance\@tempdima by\beamer@leftmargin%
+    \advance\@tempdima by\beamer@rightmargin%
+    \vskip1em%
+    \begin{beamercolorbox}[sep=0.012\paperwidth,left,wd=\the\@tempdima]{frametitle}
+        \usebeamerfont{frametitle}%
+        \strut\insertframetitle\strut\par%
+        {%
+            \ifx\insertframetitle\@empty%
+            \else%
+            {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\insertframesubtitle\strut\par}%
+            \fi
+        }%
+    \end{beamercolorbox}
+}
+
+\defbeamertemplate*{footline}{UU}[1][]{
+    \newcommand{\footerheight}{0.021\paperheight}%
+    \newcommand{\authorfieldwidth}{0.25\paperwidth}%
+    \newcommand{\titlefieldwidth}{\paperwidth}%
+    \newcommand{\adjustment}{0.01\paperwidth}%
+
+    \leavevmode%
+    \hbox{%
+    \begin{beamercolorbox}[ht=\footerheight,wd=\authorfieldwidth,right,rightskip=\adjustment,dp=1ex]{author in head/foot}
+        \usebeamerfont{author in head/foot}%
+        \insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{\insertshortinstitute}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[ht=\footerheight,wd=\titlefieldwidth,left,leftskip=\adjustment,dp=1ex]{title in head/foot}
+        \usebeamerfont{title in head/foot}\insertshorttitle
+    \end{beamercolorbox}}
+
+}
+\mode<all>

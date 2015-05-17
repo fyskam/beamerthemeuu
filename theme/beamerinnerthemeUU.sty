@@ -1,0 +1,51 @@
+\setbeamertemplate{background}{
+    \begin{tikzpicture}[every node/.style={inner sep=0,outer sep=0}]
+        \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \ifnum\thepage=1\relax%
+        \node[anchor=north west] (logo_title) at (0.073*\the\paperwidth, \the\paperheight)
+            {\includegraphics[width=0.12\paperwidth]{logo_uu}};
+    \fi
+    \ifnum\thepage>1\relax%
+        \fill[fill=UUred] (0,0.9*\the\paperheight) rectangle (\the\paperwidth, \the\paperheight);
+        \node[anchor=north west] (logo) at (0,\the\paperheight)
+            {\includegraphics[height=0.1\paperheight]{125_whitetransparent.png}};
+    \fi
+        \node[anchor=south east, opacity=0.1] (sigill) at (\the\paperwidth, 0)
+            {\includegraphics[width=0.36\paperwidth]{sigill}};
+    \fill[black,opacity=0.3] (0,0) rectangle (\the\paperwidth, \the\myfooterheight);
+    \fill[fill=UUred] (0,0) rectangle (0.25*\the\paperwidth, \the\myfooterheight);
+    %\ifnum\thepage<7\relax%
+    %\draw (0,0) -- (\the\paperwidth,\the\paperheight);
+    %\draw (0,\the\paperheight) -- (\the\paperwidth,0);
+    %\draw (1in+\the\oddsidemargin,0) -- (1in+\the\oddsidemargin,\the\paperheight);
+    %\draw (\the\paperwidth-1in-\the\oddsidemargin,0) -- (\the\paperwidth-1in-\the\oddsidemargin,\the\paperheight);
+    %\draw (1in+\the\oddsidemargin,0.5*\the\paperheight) -- (1in+\the\oddsidemargin+\the\textwidth,0.5*\the\paperheight);
+    %\fi
+    \end{tikzpicture}
+}
+
+% Title page
+%\defbeamertemplate*{title page}{UU}[1][]
+%{
+%    \vskip6cm%
+%        \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=0pt,#1]{title page header}
+%    \usebeamerfont{title}\inserttitle\par%
+%        \end{beamercolorbox}%
+%        \vskip0.75cm%
+%        \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{author}
+%    \usebeamerfont{author}\insertauthor%
+%        \end{beamercolorbox}
+%    \vskip0.2cm%
+%        \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{date}
+%    \usebeamerfont{author}\insertdate%
+%        \end{beamercolorbox}
+%    \vfill
+%}
+
+% Items
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+
+\mode
+<all>

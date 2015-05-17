@@ -1,0 +1,82 @@
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+\RequirePackage{graphicx}
+\RequirePackage{calc}
+
+\newcommand{\adjusttextwidth}{%
+\setlength{\textwidth}{\paperwidth - 2in - \oddsidemargin - \oddsidemargin}
+}
+\newcommand{\adjustlengths}{%
+\setlength{\textwidth}{\paperwidth - 2in - \oddsidemargin - \oddsidemargin}
+%\setlength{\headheight}{0.5\paperheight}
+\setlength{\myfooterheight}{0.021\paperheight}
+}
+
+\newlength{\myfooterheight}
+
+\newcommand\framenumbering{%
+\let\oldmacro\insertshorttitle%
+\renewcommand\insertshorttitle{%
+  \oldmacro\hfill\insertframenumber}
+}
+
+\newcommand{\sectionadjust}{\hskip0.12\paperwidth}%
+
+\newcommand{\UUsmall}{%
+\setlength{\paperwidth}{364.19536pt}%
+\setlength{\paperheight}{273.14662pt}%
+\adjustlengths%
+\setlength{\myfooterheight}{0.031\paperheight}%
+\setbeamerfont{frametitle}{size=\small}%
+\setbeamerfont{framesubtitle}{size=\tiny}%
+\setbeamerfont{author in head/foot}{size=\tiny}%
+\setbeamerfont{title in head/foot}{size=\tiny}%
+\setbeamerfont{section in head/foot}{size=\small}%
+\setbeamerfont{subsection in head/foot}{size=\tiny}%
+\renewcommand{\sectionadjust}{\hskip0.14\paperwidth}%
+}
+
+\newcommand{\UUmedium}{%
+\setlength{\paperwidth}{19.3cm}
+\setlength{\paperheight}{15.0cm}
+\adjustlengths
+\setbeamerfont{frametitle}{size=\Large}%
+\setbeamerfont{framesubtitle}{size=\footnotesize}%
+\setbeamerfont{author in head/foot}{size=\tiny}%
+\setbeamerfont{title in head/foot}{size=\tiny}%
+\setbeamerfont{section in head/foot}{size=\Large}%
+\setbeamerfont{subsection in head/foot}{size=\footnotesize}%
+\renewcommand{\sectionadjust}{\hskip0.12\paperwidth}%
+}
+
+\newcommand{\UUlarge}{%
+\setlength{\paperwidth}{25.4cm}
+\setlength{\paperheight}{19.0cm}
+\adjustlengths
+\setbeamerfont{frametitle}{size=\LARGE}%
+\setbeamerfont{framesubtitle}{size=\small}%
+\setbeamerfont{author in head/foot}{size=\scriptsize}%
+\setbeamerfont{title in head/foot}{size=\scriptsize}%
+\setbeamerfont{section in head/foot}{size=\LARGE}%
+\setbeamerfont{subsection in head/foot}{size=\small}%
+\renewcommand{\sectionadjust}{\hskip0.1\paperwidth}%
+}
+
+%\UUsmall
+\UUmedium
+
+% Settings
+\useinnertheme{UU}
+\useoutertheme{UU}
+\usecolortheme{UU}
+
+\setbeamerfont{author in head/foot}{parent=normal text}
+\setbeamerfont{title in head/foot}{parent=normal text}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rectangle]
+\setbeamertemplate{fonts}[proffessionalfonts]
+
+\mode<all>
