@@ -38,5 +38,10 @@ To use one of the sizes simply include it after the theme, e.g.
 ```
 to use the large size.
 
+There's also a predefined macro for page numbering. To use it include the following in the preamble
+```
+\framenumbering
+```
+
 ## License
 All source code is released under the MIT license if nothing else is stated. All the artwork (UU logo) is property of Uppsala University and must be used with their consent.
